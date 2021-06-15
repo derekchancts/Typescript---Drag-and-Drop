@@ -1,5 +1,6 @@
 
-namespace App {
+
+
   // VALIDATION
 
   // alternative can use "type" or use a class. Then we instanticate it later
@@ -34,4 +35,4 @@ namespace App {
     return isValid;
   };
 
-}
+

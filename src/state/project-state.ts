@@ -1,6 +1,10 @@
 
-namespace App {
-    // PROJECT STATE MANAGEMENT
+import { Project, ProjectStatus } from '../models/project.js';
+
+
+
+  // PROJECT STATE MANAGEMENT
+  
   // type Listener = (items: Project[]) => void;
   type Listener<T> = (items: T[]) => void;
 
@@ -84,7 +88,10 @@ namespace App {
 
   };
 
+
+
+  // this is only being run once. After that, any other files which runs it will not run this again.
+  // so, only one state will be shared.
+
   // const projectState = new ProjectState();
   export const projectState = ProjectState.getInstance();
-
-}

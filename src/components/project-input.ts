@@ -1,11 +1,17 @@
 
-/// <reference path="base-component.ts" />
-/// <reference path="../decorators/autobind.ts" />
-/// <reference path="../util/validation.ts" />
-/// <reference path="../state/project-state.ts" />
+import { Component } from './base-component.js';
+// import Component from './base-component.js';
+// import Cmp from './base-component.js';
+
+import { Validatable, validate } from '../util/validation.js';
+// import * as Validation from '../util/validation.js';
+
+import { autobind } from '../decorators/autobind.js';
+// import { autobind as Autobind} from '../decorators/autobind.js';
+
+import { projectState } from '../state/project-state.js';
 
 
-namespace App {
   // PROJECTINPUT CLASS
   export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     titleInputElement: HTMLInputElement;
@@ -31,6 +37,7 @@ namespace App {
       const enteredDescription = this.descriptionInputElement.value;
       const enteredPeople = this.peopleInputElement.value;
 
+      // const titleValidatable: Validation.Validatable = {
       const titleValidatable: Validatable = {
         value: enteredTitle,
         required: true
@@ -52,6 +59,8 @@ namespace App {
         // validate({value: enteredTitle, required: true, minLength: 5}) && 
         // validate({value: enteredDescription, required: true, minLength: 5}) && 
         // validate({value: enteredPeople, required: true, minLength: 5}) 
+        
+        /* !Validation.validate(titleValidatable) || */
         !validate(titleValidatable) || 
         !validate(descriptionValidatable) ||
         !validate(peopleValidatable)
@@ -110,4 +119,4 @@ namespace App {
     renderContent() {};
 
   };
-}
+
