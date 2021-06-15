@@ -1,9 +1,12 @@
 
-namespace App {
-    // COMPONENT BASE CLASS
+
+
+  // COMPONENT BASE CLASS
 
   // abstract - meaning that it should not be directly instantiated 
   // instead, it should always be used as "inheritance"
+  
+  // export default abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     templateElement: HTMLTemplateElement;
     hostElement: T;
@@ -39,5 +42,3 @@ namespace App {
 
     abstract renderContent(): void;  // public method
   };
-
-}
